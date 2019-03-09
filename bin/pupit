@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+## garbo testing script while I finish up the gem, and work on a "real" cli
+require 'bundler/setup'
+require 'pupit'
+
+Pupit.configure do |config|
+  config.puppetdb_server = ENV['PUPPIT_SERVER']
+end
+
+case ENV['PUPIT_TEST']
+when 'failed'
+  failed = Pupit::Reports.by_status(status: 'failed')
+  p failed
+when 'aged'
+  aged = Pupit::Reports.get_aged
+  p aged
+else
+  nodes = Pupit::Nodes.random
+  p nodes
+end
