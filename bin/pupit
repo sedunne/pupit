@@ -4,17 +4,17 @@ require 'bundler/setup'
 require 'pupit'
 
 Pupit.configure do |config|
-  config.puppetdb_server = ENV['PUPPIT_SERVER']
+  config.puppetdb_server = ENV['PUPIT_SERVER']
 end
 
 case ENV['PUPIT_TEST']
 when 'failed'
-  failed = Pupit::Reports.by_status(status: 'failed')
+  failed = Pupit::Reports.by_status(status: ARGV[0].to_s)
   p failed
 when 'aged'
   aged = Pupit::Reports.get_aged
   p aged
 else
-  nodes = Pupit::Nodes.random
+  nodes = Pupit::Nodes.random(ARGV[0])
   p nodes
 end
