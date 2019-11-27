@@ -1,9 +1,9 @@
-module Pupit
+module Pupmin
   ## Node/Agent grouping and other informational helpers
   class Nodes
     ## Simple list all nodes by fqdn values
     def self.all
-      puppetdb = Pupit::PuppetDB.build
+      puppetdb = Pupmin::PuppetDB.build
       nodes = []
       puppetdb.request('facts', ['=', 'name', 'fqdn']).data.each do |x|
           nodes.push(x['value'])
@@ -23,8 +23,8 @@ module Pupit
     end
 
     def self.deactivate(certname)
-      pdb = Pupit::PuppetDB.build
-      rsp = pdb.command('deactivate node', {'certname' => $certname, 'producer_timestamp' => Pupit::Util.make_timestamp}, 3)
+      pdb = Pupmin::PuppetDB.build
+      rsp = pdb.command('deactivate node', {'certname' => $certname, 'producer_timestamp' => Pupmin::Util.make_timestamp}, 3)
       rsp.data
     end
   end

@@ -1,4 +1,4 @@
-module Pupit
+module Pupmin
   ## Utilities/helpers for various things
   class Util
     ## PuppetDB seems to use a timestamp that isn't quite standard, so this

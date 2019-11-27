@@ -1,8 +1,8 @@
-module Pupit
+module Pupmin
   ## shortcuts for some useful report information
   class Reports
     def self.call_query(query, options = {}, endpoint = 'reports')
-      puppetdb = Pupit::PuppetDB.build
+      puppetdb = Pupmin::PuppetDB.build
       puppetdb.request(endpoint, query, options)
     end
 
@@ -23,7 +23,7 @@ module Pupit
       query = [
         '<',
         'catalog_timestamp',
-        Pupit::Util.make_timestamp(threshold.to_i)
+        Pupmin::Util.make_timestamp(threshold.to_i)
       ]
 
       call_query(query, options, 'nodes')

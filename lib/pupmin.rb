@@ -1,11 +1,11 @@
-require_relative 'pupit/version'
-require_relative 'pupit/util'
-require_relative 'pupit/puppetdb'
-require_relative 'pupit/reports'
-require_relative 'pupit/nodes'
+require_relative 'pupmin/version'
+require_relative 'pupmin/util'
+require_relative 'pupmin/puppetdb'
+require_relative 'pupmin/reports'
+require_relative 'pupmin/nodes'
 
 ## main module file and configuration initialization
-module Pupit
+module Pupmin
   class << self
     attr_accessor :puppetdb_url, :puppetca_host, :puppet_certs
 

@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "pupit/version"
+require "pupmin/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "pupit"
-  spec.version       = Pupit::VERSION
+  spec.name          = "pupmin"
+  spec.version       = Pupmin::VERSION
   spec.authors       = ["Stephen Dunne"]
   spec.email         = ["stephen@icanhazmail.net"]
 
   spec.summary       = 'Puppet administrative and information toolkit'
   spec.description   = 'Collection of methods and bindings for quick access to various puppet administrative tasks'
-  spec.homepage      = 'https://github.com/sedunne/pupit.git'
+  spec.homepage      = 'https://github.com/sedunne/pupmin.git'
   spec.license       = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = 'https://rubygems.org'
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = 'https://github.com/sedunne/pupit.git'
-    spec.metadata["changelog_uri"] = 'https://github.com/sedunne/pupit.git/CHANGELOG.md'
+    spec.metadata["source_code_uri"] = 'https://github.com/sedunne/pupmin.git'
+    spec.metadata["changelog_uri"] = 'https://github.com/sedunne/pupmin.git/CHANGELOG.md'
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
