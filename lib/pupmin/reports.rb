@@ -19,14 +19,9 @@ module Pupmin
 
     ## Get a list of "aged" agents, i.e servers that last submitted a
     ##  report > threshold
-    def self.get_aged(threshold: 3600, options: {})
-      query = [
-        '<',
-        'catalog_timestamp',
-        Pupmin::Util.make_timestamp(threshold.to_i)
-      ]
-
-      call_query(query, options, 'nodes')
+    def self.get_aged(threshold: 7200, options: {})
+      query = ['in', 'certname', ['extract', 'certname', ['select_nodes', ['<', 'catalog_timestamp', Pupmin::Util.make_timestamp(threshold.to_i)]]]]
+      call_query(query, options, 'facts/fqdn')
     end
   end
 end
