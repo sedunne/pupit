@@ -1,13 +1,10 @@
 require 'puppetdb'
 
 module Pupit
-  ## Essentially a wrapper for the VoxPupuli PuppetDB gem.
+  ## wrapper for the VoxPupuli PuppetDB gem.
   class PuppetDB < PuppetDB::Client
     def self.build
-      @server = Pupit.configuration.puppetdb_server
-      @pem = Pupit.configuration.ssl_certs
-
-      ::PuppetDB::Client.new(server: @server, pem: @pem)
+      ::PuppetDB::Client.new(server: Pupit.puppetdb_url, pem: Pupit.puppet_certs)
     end
   end
 end
