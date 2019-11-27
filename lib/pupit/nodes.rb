@@ -21,5 +21,11 @@ module Pupit
       end
       rand_hosts
     end
+
+    def self.deactivate(certname)
+      pdb = Pupit::PuppetDB.build
+      rsp = pdb.command('deactivate node', {'certname' => $certname, 'producer_timestamp' => Pupit::Util.make_timestamp}, 3)
+      rsp.data
+    end
   end
 end
