@@ -24,7 +24,7 @@ module Pupmin
 
     def self.deactivate(certname)
       pdb = Pupmin::PuppetDB.build
-      rsp = pdb.command('deactivate node', {'certname' => "'#{certname}'", 'producer_timestamp' => Pupmin::Util.make_timestamp}, 3)
+      rsp = pdb.command('deactivate node', {'certname' => certname, 'producer_timestamp' => Pupmin::Util.make_timestamp}, 3)
       rsp.data
     end
   end
