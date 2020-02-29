@@ -16,7 +16,7 @@ GEM
     multi_xml (0.6.0)
     puppetdb-ruby (1.2.0)
       httparty
-    rake (10.5.0)
+    rake (13.0.1)
 
 PLATFORMS
   ruby
@@ -25,7 +25,7 @@ DEPENDENCIES
   bundler (~> 2.0)
   pupmin!
   puppetdb-ruby
-  rake (~> 10.0)
+  rake (~> 13.0)
 
 BUNDLED WITH
    2.0.2
